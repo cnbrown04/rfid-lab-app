@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E04F83C62BED8285007AF835 /* RFIDAppNewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F83C52BED8285007AF835 /* RFIDAppNewApp.swift */; };
+		E04F83C82BED8285007AF835 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F83C72BED8285007AF835 /* ContentView.swift */; };
+		E04F83CA2BED8286007AF835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04F83C92BED8286007AF835 /* Assets.xcassets */; };
+		E04F83CE2BED8286007AF835 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04F83CD2BED8286007AF835 /* Preview Assets.xcassets */; };
+		E04F84072BED82FF007AF835 /* libintegratedsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84032BED82FF007AF835 /* libintegratedsdk.a */; };
+		E04F84082BED82FF007AF835 /* libsymbolbt-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84042BED82FF007AF835 /* libsymbolbt-sdk.a */; };
+		E04F84092BED82FF007AF835 /* libsymbolrfid-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84052BED82FF007AF835 /* libsymbolrfid-sdk.a */; };
+		E04F840D2BED836A007AF835 /* AuditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F840B2BED836A007AF835 /* AuditView.swift */; };
+		E04F840E2BED836A007AF835 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F840C2BED836A007AF835 /* SettingsView.swift */; };
+		E04F84102BED8373007AF835 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F840F2BED8373007AF835 /* TestingView.swift */; };
+		E04F84132BED83B1007AF835 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84122BED83B1007AF835 /* CoreBluetooth.framework */; };
+		E04F84152BED83BA007AF835 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84142BED83BA007AF835 /* ExternalAccessory.framework */; };
+		E04F84182BED88C6007AF835 /* NewApp.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04F84172BED88C6007AF835 /* NewApp.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E04F83C22BED8285007AF835 /* RFIDAppNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFIDAppNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E04F83C52BED8285007AF835 /* RFIDAppNewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDAppNewApp.swift; sourceTree = "<group>"; };
+		E04F83C72BED8285007AF835 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E04F83C92BED8286007AF835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E04F83CB2BED8286007AF835 /* RFIDAppNew.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RFIDAppNew.entitlements; sourceTree = "<group>"; };
+		E04F83CD2BED8286007AF835 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E04F83D42BED82F4007AF835 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
+		E04F83D52BED82FF007AF835 /* AccessOperationCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessOperationCode.h; sourceTree = "<group>"; };
+		E04F83D62BED82FF007AF835 /* FirmwareUpdateEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirmwareUpdateEvent.h; sourceTree = "<group>"; };
+		E04F83D72BED82FF007AF835 /* ISbtSdkApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISbtSdkApi.h; sourceTree = "<group>"; };
+		E04F83D82BED82FF007AF835 /* ISbtSdkApiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISbtSdkApiDelegate.h; sourceTree = "<group>"; };
+		E04F83D92BED82FF007AF835 /* RfidAccessConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAccessConfig.h; sourceTree = "<group>"; };
+		E04F83DA2BED82FF007AF835 /* RfidAccessCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAccessCriteria.h; sourceTree = "<group>"; };
+		E04F83DB2BED82FF007AF835 /* RfidAccessParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAccessParameters.h; sourceTree = "<group>"; };
+		E04F83DC2BED82FF007AF835 /* RfidAntennaConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAntennaConfiguration.h; sourceTree = "<group>"; };
+		E04F83DD2BED82FF007AF835 /* RfidAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAttribute.h; sourceTree = "<group>"; };
+		E04F83DE2BED82FF007AF835 /* RfidBatteryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidBatteryEvent.h; sourceTree = "<group>"; };
+		E04F83DF2BED82FF007AF835 /* RfidBatteryStatusInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidBatteryStatusInformation.h; sourceTree = "<group>"; };
+		E04F83E02BED82FF007AF835 /* RfidDatabaseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidDatabaseEvent.h; sourceTree = "<group>"; };
+		E04F83E12BED82FF007AF835 /* RfidDynamicPowerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidDynamicPowerConfig.h; sourceTree = "<group>"; };
+		E04F83E22BED82FF007AF835 /* RfidGetWifiStatusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidGetWifiStatusInfo.h; sourceTree = "<group>"; };
+		E04F83E32BED82FF007AF835 /* RfidLinkProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidLinkProfile.h; sourceTree = "<group>"; };
+		E04F83E42BED82FF007AF835 /* RfidMultipleTagsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidMultipleTagsConfig.h; sourceTree = "<group>"; };
+		E04F83E52BED82FF007AF835 /* RfidOperEndSummaryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidOperEndSummaryEvent.h; sourceTree = "<group>"; };
+		E04F83E62BED82FF007AF835 /* RfidPowerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidPowerEvent.h; sourceTree = "<group>"; };
+		E04F83E72BED82FF007AF835 /* RfidPreFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidPreFilter.h; sourceTree = "<group>"; };
+		E04F83E82BED82FF007AF835 /* RfidRadioErrorEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidRadioErrorEvent.h; sourceTree = "<group>"; };
+		E04F83E92BED82FF007AF835 /* RfidReaderCapabilitiesInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReaderCapabilitiesInfo.h; sourceTree = "<group>"; };
+		E04F83EA2BED82FF007AF835 /* RfidReaderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReaderInfo.h; sourceTree = "<group>"; };
+		E04F83EB2BED82FF007AF835 /* RfidReaderVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReaderVersionInfo.h; sourceTree = "<group>"; };
+		E04F83EC2BED82FF007AF835 /* RfidRegionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidRegionInfo.h; sourceTree = "<group>"; };
+		E04F83ED2BED82FF007AF835 /* RfidRegulatoryConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidRegulatoryConfig.h; sourceTree = "<group>"; };
+		E04F83EE2BED82FF007AF835 /* RfidReportConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReportConfig.h; sourceTree = "<group>"; };
+		E04F83EF2BED82FF007AF835 /* RfidSdkApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkApi.h; sourceTree = "<group>"; };
+		E04F83F02BED82FF007AF835 /* RfidSdkApiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkApiDelegate.h; sourceTree = "<group>"; };
+		E04F83F12BED82FF007AF835 /* RfidSdkDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkDefs.h; sourceTree = "<group>"; };
+		E04F83F22BED82FF007AF835 /* RfidSdkFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkFactory.h; sourceTree = "<group>"; };
+		E04F83F32BED82FF007AF835 /* RfidSingulationConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSingulationConfig.h; sourceTree = "<group>"; };
+		E04F83F42BED82FF007AF835 /* RfidStartTriggerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidStartTriggerConfig.h; sourceTree = "<group>"; };
+		E04F83F52BED82FF007AF835 /* RfidStopTriggerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidStopTriggerConfig.h; sourceTree = "<group>"; };
+		E04F83F62BED82FF007AF835 /* RfidTagData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTagData.h; sourceTree = "<group>"; };
+		E04F83F72BED82FF007AF835 /* RfidTagFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTagFilter.h; sourceTree = "<group>"; };
+		E04F83F82BED82FF007AF835 /* RfidTagReportConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTagReportConfig.h; sourceTree = "<group>"; };
+		E04F83F92BED82FF007AF835 /* RfidTemperatureEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTemperatureEvent.h; sourceTree = "<group>"; };
+		E04F83FA2BED82FF007AF835 /* RfidUniqueTagsReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidUniqueTagsReport.h; sourceTree = "<group>"; };
+		E04F83FB2BED82FF007AF835 /* RfidUntraceableConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidUntraceableConfig.h; sourceTree = "<group>"; };
+		E04F83FC2BED82FF007AF835 /* RfidWlanProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidWlanProfile.h; sourceTree = "<group>"; };
+		E04F83FD2BED82FF007AF835 /* RfidWlanScanList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidWlanScanList.h; sourceTree = "<group>"; };
+		E04F83FE2BED82FF007AF835 /* RMDAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDAttributes.h; sourceTree = "<group>"; };
+		E04F83FF2BED82FF007AF835 /* SbtScannerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbtScannerInfo.h; sourceTree = "<group>"; };
+		E04F84002BED82FF007AF835 /* SbtSdkDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbtSdkDefs.h; sourceTree = "<group>"; };
+		E04F84012BED82FF007AF835 /* SbtSdkFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbtSdkFactory.h; sourceTree = "<group>"; };
+		E04F84032BED82FF007AF835 /* libintegratedsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libintegratedsdk.a; sourceTree = "<group>"; };
+		E04F84042BED82FF007AF835 /* libsymbolbt-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libsymbolbt-sdk.a"; sourceTree = "<group>"; };
+		E04F84052BED82FF007AF835 /* libsymbolrfid-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libsymbolrfid-sdk.a"; sourceTree = "<group>"; };
+		E04F840B2BED836A007AF835 /* AuditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditView.swift; sourceTree = "<group>"; };
+		E04F840C2BED836A007AF835 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E04F840F2BED8373007AF835 /* TestingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
+		E04F84122BED83B1007AF835 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
+		E04F84142BED83BA007AF835 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
+		E04F84162BED83C3007AF835 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		E04F84172BED88C6007AF835 /* NewApp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = NewApp.plist; path = RFIDAppNew/NewApp.plist; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E04F83BF2BED8285007AF835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E04F84092BED82FF007AF835 /* libsymbolrfid-sdk.a in Frameworks */,
+				E04F84152BED83BA007AF835 /* ExternalAccessory.framework in Frameworks */,
+				E04F84082BED82FF007AF835 /* libsymbolbt-sdk.a in Frameworks */,
+				E04F84132BED83B1007AF835 /* CoreBluetooth.framework in Frameworks */,
+				E04F84072BED82FF007AF835 /* libintegratedsdk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E04F83B92BED8285007AF835 = {
+			isa = PBXGroup;
+			children = (
+				E04F83D42BED82F4007AF835 /* header.h */,
+				E04F84062BED82FF007AF835 /* lib */,
+				E04F83C42BED8285007AF835 /* RFIDAppNew */,
+				E04F83C32BED8285007AF835 /* Products */,
+				E04F84112BED83B1007AF835 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E04F83C32BED8285007AF835 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E04F83C22BED8285007AF835 /* RFIDAppNew.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E04F83C42BED8285007AF835 /* RFIDAppNew */ = {
+			isa = PBXGroup;
+			children = (
+				E04F840A2BED8343007AF835 /* Views */,
+				E04F83C52BED8285007AF835 /* RFIDAppNewApp.swift */,
+				E04F83C72BED8285007AF835 /* ContentView.swift */,
+				E04F83C92BED8286007AF835 /* Assets.xcassets */,
+				E04F83CB2BED8286007AF835 /* RFIDAppNew.entitlements */,
+				E04F83CC2BED8286007AF835 /* Preview Content */,
+				E04F84172BED88C6007AF835 /* NewApp.plist */,
+			);
+			path = RFIDAppNew;
+			sourceTree = "<group>";
+		};
+		E04F83CC2BED8286007AF835 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E04F83CD2BED8286007AF835 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E04F84022BED82FF007AF835 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				E04F83D52BED82FF007AF835 /* AccessOperationCode.h */,
+				E04F83D62BED82FF007AF835 /* FirmwareUpdateEvent.h */,
+				E04F83D72BED82FF007AF835 /* ISbtSdkApi.h */,
+				E04F83D82BED82FF007AF835 /* ISbtSdkApiDelegate.h */,
+				E04F83D92BED82FF007AF835 /* RfidAccessConfig.h */,
+				E04F83DA2BED82FF007AF835 /* RfidAccessCriteria.h */,
+				E04F83DB2BED82FF007AF835 /* RfidAccessParameters.h */,
+				E04F83DC2BED82FF007AF835 /* RfidAntennaConfiguration.h */,
+				E04F83DD2BED82FF007AF835 /* RfidAttribute.h */,
+				E04F83DE2BED82FF007AF835 /* RfidBatteryEvent.h */,
+				E04F83DF2BED82FF007AF835 /* RfidBatteryStatusInformation.h */,
+				E04F83E02BED82FF007AF835 /* RfidDatabaseEvent.h */,
+				E04F83E12BED82FF007AF835 /* RfidDynamicPowerConfig.h */,
+				E04F83E22BED82FF007AF835 /* RfidGetWifiStatusInfo.h */,
+				E04F83E32BED82FF007AF835 /* RfidLinkProfile.h */,
+				E04F83E42BED82FF007AF835 /* RfidMultipleTagsConfig.h */,
+				E04F83E52BED82FF007AF835 /* RfidOperEndSummaryEvent.h */,
+				E04F83E62BED82FF007AF835 /* RfidPowerEvent.h */,
+				E04F83E72BED82FF007AF835 /* RfidPreFilter.h */,
+				E04F83E82BED82FF007AF835 /* RfidRadioErrorEvent.h */,
+				E04F83E92BED82FF007AF835 /* RfidReaderCapabilitiesInfo.h */,
+				E04F83EA2BED82FF007AF835 /* RfidReaderInfo.h */,
+				E04F83EB2BED82FF007AF835 /* RfidReaderVersionInfo.h */,
+				E04F83EC2BED82FF007AF835 /* RfidRegionInfo.h */,
+				E04F83ED2BED82FF007AF835 /* RfidRegulatoryConfig.h */,
+				E04F83EE2BED82FF007AF835 /* RfidReportConfig.h */,
+				E04F83EF2BED82FF007AF835 /* RfidSdkApi.h */,
+				E04F83F02BED82FF007AF835 /* RfidSdkApiDelegate.h */,
+				E04F83F12BED82FF007AF835 /* RfidSdkDefs.h */,
+				E04F83F22BED82FF007AF835 /* RfidSdkFactory.h */,
+				E04F83F32BED82FF007AF835 /* RfidSingulationConfig.h */,
+				E04F83F42BED82FF007AF835 /* RfidStartTriggerConfig.h */,
+				E04F83F52BED82FF007AF835 /* RfidStopTriggerConfig.h */,
+				E04F83F62BED82FF007AF835 /* RfidTagData.h */,
+				E04F83F72BED82FF007AF835 /* RfidTagFilter.h */,
+				E04F83F82BED82FF007AF835 /* RfidTagReportConfig.h */,
+				E04F83F92BED82FF007AF835 /* RfidTemperatureEvent.h */,
+				E04F83FA2BED82FF007AF835 /* RfidUniqueTagsReport.h */,
+				E04F83FB2BED82FF007AF835 /* RfidUntraceableConfig.h */,
+				E04F83FC2BED82FF007AF835 /* RfidWlanProfile.h */,
+				E04F83FD2BED82FF007AF835 /* RfidWlanScanList.h */,
+				E04F83FE2BED82FF007AF835 /* RMDAttributes.h */,
+				E04F83FF2BED82FF007AF835 /* SbtScannerInfo.h */,
+				E04F84002BED82FF007AF835 /* SbtSdkDefs.h */,
+				E04F84012BED82FF007AF835 /* SbtSdkFactory.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		E04F84062BED82FF007AF835 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E04F84022BED82FF007AF835 /* include */,
+				E04F84032BED82FF007AF835 /* libintegratedsdk.a */,
+				E04F84042BED82FF007AF835 /* libsymbolbt-sdk.a */,
+				E04F84052BED82FF007AF835 /* libsymbolrfid-sdk.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		E04F840A2BED8343007AF835 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E04F840F2BED8373007AF835 /* TestingView.swift */,
+				E04F840B2BED836A007AF835 /* AuditView.swift */,
+				E04F840C2BED836A007AF835 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E04F84112BED83B1007AF835 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E04F84162BED83C3007AF835 /* libz.tbd */,
+				E04F84142BED83BA007AF835 /* ExternalAccessory.framework */,
+				E04F84122BED83B1007AF835 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E04F83C12BED8285007AF835 /* RFIDAppNew */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E04F83D12BED8286007AF835 /* Build configuration list for PBXNativeTarget "RFIDAppNew" */;
+			buildPhases = (
+				E04F83BE2BED8285007AF835 /* Sources */,
+				E04F83BF2BED8285007AF835 /* Frameworks */,
+				E04F83C02BED8285007AF835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RFIDAppNew;
+			productName = RFIDAppNew;
+			productReference = E04F83C22BED8285007AF835 /* RFIDAppNew.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E04F83BA2BED8285007AF835 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					E04F83C12BED8285007AF835 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = E04F83BD2BED8285007AF835 /* Build configuration list for PBXProject "RFIDAppNew" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E04F83B92BED8285007AF835;
+			productRefGroup = E04F83C32BED8285007AF835 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E04F83C12BED8285007AF835 /* RFIDAppNew */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E04F83C02BED8285007AF835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E04F83CE2BED8286007AF835 /* Preview Assets.xcassets in Resources */,
+				E04F83CA2BED8286007AF835 /* Assets.xcassets in Resources */,
+				E04F84182BED88C6007AF835 /* NewApp.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E04F83BE2BED8285007AF835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E04F840D2BED836A007AF835 /* AuditView.swift in Sources */,
+				E04F84102BED8373007AF835 /* TestingView.swift in Sources */,
+				E04F840E2BED836A007AF835 /* SettingsView.swift in Sources */,
+				E04F83C82BED8285007AF835 /* ContentView.swift in Sources */,
+				E04F83C62BED8285007AF835 /* RFIDAppNewApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E04F83CF2BED8286007AF835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = header.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E04F83D02BED8286007AF835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = header.h;
+			};
+			name = Release;
+		};
+		E04F83D22BED8286007AF835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RFIDAppNew/RFIDAppNew.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RFIDAppNew/Preview Content\"";
+				DEVELOPMENT_TEAM = 9CNX7B59AB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RFIDAppNew/NewApp.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RFIDAppNew;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E04F83D32BED8286007AF835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RFIDAppNew/RFIDAppNew.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RFIDAppNew/Preview Content\"";
+				DEVELOPMENT_TEAM = 9CNX7B59AB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RFIDAppNew/NewApp.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RFIDAppNew;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E04F83BD2BED8285007AF835 /* Build configuration list for PBXProject "RFIDAppNew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E04F83CF2BED8286007AF835 /* Debug */,
+				E04F83D02BED8286007AF835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E04F83D12BED8286007AF835 /* Build configuration list for PBXNativeTarget "RFIDAppNew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E04F83D22BED8286007AF835 /* Debug */,
+				E04F83D32BED8286007AF835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E04F83BA2BED8285007AF835 /* Project object */;
+}
