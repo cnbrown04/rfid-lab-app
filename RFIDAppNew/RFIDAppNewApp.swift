@@ -39,6 +39,9 @@ class Listener: NSObject, ISbtSdkApiDelegate {
         } else {
             print("Failed to subscribe to Scanner Appearance events.")
         }
+        
+        //apiInstance.sbt enable bluetooth.
+        //apiinstance.sbt enable listening for available devices.
     }
     
     func sbtEventScannerAppeared(_ availableScanner: SbtScannerInfo!) {
