@@ -71,14 +71,13 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var scannerIndex = 0
-    let listener = Listener()
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("SCANNER OPTIONS"), content: {
                     Button("Load Scanners") {
-                        //scannerSDK.getAvailableScanners()
+
                     }
                     HStack {
                         Image(systemName: "qrcode.viewfinder")

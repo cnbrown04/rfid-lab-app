@@ -28,7 +28,7 @@ struct ContentView: View {
                             .background(.blue)
                             .cornerRadius(8)
                         })
-                        NavigationLink(destination: TestingView(), label: {
+                        NavigationLink(destination: RFIDReaderListView(), label: {
                             VStack {
                                 Label("Testing", systemImage: "testtube.2")
                                 Button(action: {}) {

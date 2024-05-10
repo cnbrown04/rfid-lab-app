@@ -13,9 +13,9 @@ struct TestingView: View {
     @State public var readUPC: Float = 0
     var body: some View {
         HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-            Text("Store Area")
-            TextField("Click here", text: $storeArea)
-                .textFieldStyle(.roundedBorder)
+            Button("Press me") {
+                
+            }
         })
         .padding()
     }

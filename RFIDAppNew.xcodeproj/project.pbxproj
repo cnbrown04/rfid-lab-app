@@ -20,6 +20,9 @@
 		E04F84132BED83B1007AF835 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84122BED83B1007AF835 /* CoreBluetooth.framework */; };
 		E04F84152BED83BA007AF835 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84142BED83BA007AF835 /* ExternalAccessory.framework */; };
 		E04F84182BED88C6007AF835 /* NewApp.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04F84172BED88C6007AF835 /* NewApp.plist */; };
+		E04F841E2BEEC61D007AF835 /* AccessoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */; };
+		E04F84202BEED991007AF835 /* RFIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841F2BEED991007AF835 /* RFIDManager.swift */; };
+		E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		E04F84142BED83BA007AF835 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
 		E04F84162BED83C3007AF835 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		E04F84172BED88C6007AF835 /* NewApp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = NewApp.plist; path = RFIDAppNew/NewApp.plist; sourceTree = SOURCE_ROOT; };
+		E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryManager.swift; sourceTree = "<group>"; };
+		E04F841F2BEED991007AF835 /* RFIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDManager.swift; sourceTree = "<group>"; };
+		E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDReaderListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,8 @@
 				E04F83CB2BED8286007AF835 /* RFIDAppNew.entitlements */,
 				E04F83CC2BED8286007AF835 /* Preview Content */,
 				E04F84172BED88C6007AF835 /* NewApp.plist */,
+				E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */,
+				E04F841F2BEED991007AF835 /* RFIDManager.swift */,
 			);
 			path = RFIDAppNew;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 				E04F840F2BED8373007AF835 /* TestingView.swift */,
 				E04F840B2BED836A007AF835 /* AuditView.swift */,
 				E04F840C2BED836A007AF835 /* SettingsView.swift */,
+				E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,10 +307,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */,
 				E04F840D2BED836A007AF835 /* AuditView.swift in Sources */,
 				E04F84102BED8373007AF835 /* TestingView.swift in Sources */,
 				E04F840E2BED836A007AF835 /* SettingsView.swift in Sources */,
 				E04F83C82BED8285007AF835 /* ContentView.swift in Sources */,
+				E04F84202BEED991007AF835 /* RFIDManager.swift in Sources */,
+				E04F841E2BEEC61D007AF835 /* AccessoryManager.swift in Sources */,
 				E04F83C62BED8285007AF835 /* RFIDAppNewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
