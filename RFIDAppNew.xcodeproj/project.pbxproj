@@ -23,6 +23,8 @@
 		E04F841E2BEEC61D007AF835 /* AccessoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */; };
 		E04F84202BEED991007AF835 /* RFIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841F2BEED991007AF835 /* RFIDManager.swift */; };
 		E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */; };
+		E04F84262BEEFD4D007AF835 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E04F84252BEEFD4D007AF835 /* ConnectionManager.m */; };
+		E04F842D2BEEFD80007AF835 /* ScannerAppEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E04F842C2BEEFD80007AF835 /* ScannerAppEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,11 @@
 		E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryManager.swift; sourceTree = "<group>"; };
 		E04F841F2BEED991007AF835 /* RFIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDManager.swift; sourceTree = "<group>"; };
 		E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDReaderListView.swift; sourceTree = "<group>"; };
+		E04F84242BEEFD4D007AF835 /* RFIDAppNew-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RFIDAppNew-Bridging-Header.h"; sourceTree = "<group>"; };
+		E04F84252BEEFD4D007AF835 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		E04F84292BEEFD65007AF835 /* ConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		E04F842B2BEEFD78007AF835 /* ScannerAppEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScannerAppEngine.h; sourceTree = "<group>"; };
+		E04F842C2BEEFD80007AF835 /* ScannerAppEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerAppEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +138,8 @@
 		E04F83C42BED8285007AF835 /* RFIDAppNew */ = {
 			isa = PBXGroup;
 			children = (
+				E04F842A2BEEFD70007AF835 /* Other */,
+				E04F84232BEEFD21007AF835 /* ConnectionManager */,
 				E04F840A2BED8343007AF835 /* Views */,
 				E04F83C52BED8285007AF835 /* RFIDAppNewApp.swift */,
 				E04F83C72BED8285007AF835 /* ContentView.swift */,
@@ -236,6 +245,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E04F84232BEEFD21007AF835 /* ConnectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				E04F84292BEEFD65007AF835 /* ConnectionManager.h */,
+				E04F84252BEEFD4D007AF835 /* ConnectionManager.m */,
+				E04F84242BEEFD4D007AF835 /* RFIDAppNew-Bridging-Header.h */,
+			);
+			path = ConnectionManager;
+			sourceTree = "<group>";
+		};
+		E04F842A2BEEFD70007AF835 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E04F842B2BEEFD78007AF835 /* ScannerAppEngine.h */,
+				E04F842C2BEEFD80007AF835 /* ScannerAppEngine.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,6 +296,7 @@
 				TargetAttributes = {
 					E04F83C12BED8285007AF835 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 				};
 			};
@@ -307,6 +336,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04F842D2BEEFD80007AF835 /* ScannerAppEngine.m in Sources */,
+				E04F84262BEEFD4D007AF835 /* ConnectionManager.m in Sources */,
 				E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */,
 				E04F840D2BED836A007AF835 /* AuditView.swift in Sources */,
 				E04F84102BED8373007AF835 /* TestingView.swift in Sources */,
@@ -444,6 +475,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RFIDAppNew/RFIDAppNew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -479,6 +511,8 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RFIDAppNew/ConnectionManager/RFIDAppNew-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,6 +524,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RFIDAppNew/RFIDAppNew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -525,6 +560,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RFIDAppNew/ConnectionManager/RFIDAppNew-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
