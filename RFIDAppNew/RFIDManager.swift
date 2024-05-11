@@ -14,7 +14,10 @@ class RFIDViewModel: ObservableObject {
 
     func getAvailableReaderList() {
         var availableReaders: NSMutableArray? = NSMutableArray()
+        apiInstance.srfidEnableAvailableReadersDetection(true)
+        apiInstance.srfidSetOperationalMode(Int32(SRFID_OPMODE_MFI))
         apiInstance.srfidGetAvailableReadersList(&availableReaders)
+        print(availableReaders)
         
         if let readers = availableReaders as? [srfidReaderInfo] {
             self.readers = readers.map { $0.getReaderName() }
