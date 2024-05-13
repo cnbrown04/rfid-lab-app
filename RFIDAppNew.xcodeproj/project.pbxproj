@@ -23,6 +23,7 @@
 		E04F841E2BEEC61D007AF835 /* AccessoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */; };
 		E04F84202BEED991007AF835 /* RFIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841F2BEED991007AF835 /* RFIDManager.swift */; };
 		E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */; };
+		E04F842F2BF2B0FB007AF835 /* DelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F842E2BF2B0FB007AF835 /* DelegateHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryManager.swift; sourceTree = "<group>"; };
 		E04F841F2BEED991007AF835 /* RFIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDManager.swift; sourceTree = "<group>"; };
 		E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDReaderListView.swift; sourceTree = "<group>"; };
+		E04F842E2BF2B0FB007AF835 /* DelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				E04F84172BED88C6007AF835 /* NewApp.plist */,
 				E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */,
 				E04F841F2BEED991007AF835 /* RFIDManager.swift */,
+				E04F842E2BF2B0FB007AF835 /* DelegateHandler.swift */,
 			);
 			path = RFIDAppNew;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				TargetAttributes = {
 					E04F83C12BED8285007AF835 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 				};
 			};
@@ -309,6 +313,7 @@
 			files = (
 				E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */,
 				E04F840D2BED836A007AF835 /* AuditView.swift in Sources */,
+				E04F842F2BF2B0FB007AF835 /* DelegateHandler.swift in Sources */,
 				E04F84102BED8373007AF835 /* TestingView.swift in Sources */,
 				E04F840E2BED836A007AF835 /* SettingsView.swift in Sources */,
 				E04F83C82BED8285007AF835 /* ContentView.swift in Sources */,
@@ -444,6 +449,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RFIDAppNew/RFIDAppNew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -454,6 +460,8 @@
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RFIDAppNew/NewApp.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Poopity scoop, scoop de woop.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Ooopity poopity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -479,6 +487,8 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = header.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -490,6 +500,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RFIDAppNew/RFIDAppNew.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -500,6 +511,8 @@
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RFIDAppNew/NewApp.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Poopity scoop, scoop de woop.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Ooopity poopity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -525,6 +538,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = header.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
