@@ -8,6 +8,11 @@
 import SwiftUI
 import Combine
 
+struct ReaderStruct: Identifiable {
+    let name: String
+    let id: Int32
+}
+
 class RFIDViewModel: ObservableObject {
     @Published var readers: [String] = []
     let _api: srfidISdkApi = srfidSdkFactory.createRfidSdkApiInstance()
@@ -26,7 +31,7 @@ class RFIDViewModel: ObservableObject {
         _api.srfidSetDelegate(self.apiDelegate)
     }
 
-    func getAvailableReaderList() {
+    func getAvailableReaderList() -> [ReaderStruct] {
         let devices: NSMutableArray = NSMutableArray()
         var _devices = devices
         apiDelegate.availableReaders = withUnsafeMutablePointer(to: &_devices) { ptr -> Array<srfidReaderInfo>? in
@@ -43,12 +48,9 @@ class RFIDViewModel: ObservableObject {
             print("nil")
             return nil
         }
-        print(apiDelegate.availableReaders!.map({ (reader: srfidReaderInfo) -> [String : Any] in
-            return [
-                "name" : reader.getReaderName()!,
-                "id" : "\(reader.getReaderID())"
-            ]
-        }))
+        return apiDelegate.availableReaders!.map({ (reader: srfidReaderInfo) -> ReaderStruct in
+            return ReaderStruct(name: reader.getReaderName(), id: reader.getReaderID())
+        })
     }
 }
 
