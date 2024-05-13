@@ -460,6 +460,8 @@
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RFIDAppNew/NewApp.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Poopity scoop, scoop de woop.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Ooopity poopity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -509,6 +511,8 @@
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RFIDAppNew/NewApp.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Poopity scoop, scoop de woop.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Ooopity poopity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -2,11 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>external-accessory</string>
+	</array>
 	<key>UISupportedExternalAccessoryProtocols</key>
-	<string>com.zebra.rfd8x00_easytext</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Ooopity poopity</string>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Poopity scoop, scoop de woop.</string>
+	<array>
+		<string>com.zebra.scanner.SSI</string>
+		<string>com.zebra.rfd8X00_easytext</string>
+	</array>
 </dict>
 </plist>
