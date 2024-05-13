@@ -40,6 +40,7 @@ class RFIDViewModel: ObservableObject {
             else {
                 print("Unable to get available readers")
             }
+            print("nil")
             return nil
         }
         print(apiDelegate.availableReaders!.map({ (reader: srfidReaderInfo) -> [String : Any] in
