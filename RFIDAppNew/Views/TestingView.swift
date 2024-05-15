@@ -9,16 +9,60 @@ import Foundation
 import SwiftUI
 
 struct TestingView: View {
-    @State private var storeArea: String = ""
-    @State public var readUPC: Float = 0
-    var body: some View {
-        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-            Button("Press me") {
-                
+    @ObservedObject var viewModel = RFIDViewModel()
+        
+        var body: some View {
+            NavigationView {
+                VStack {
+                    List(viewModel.tags, id: \.self) { tag in
+                        Text(tag)
+                    }
+                    .navigationTitle("RFID Tags")
+                    
+                    HStack {
+                        Button(action: {
+                            let reader = "readerID"
+                            let memoryBank = MemoryBank.epc // Use the appropriate memory bank
+                            let reportConfigArgs: [String: Bool] = [
+                                "includeFirstSeenTime": true,
+                                "includePhase": true,
+                                "includePC": true,
+                                "includeRSSI": true,
+                                "includeChannelIndex": true,
+                                "includeLastSeenTime": true,
+                                "includeTagSeenCount": true
+                            ]
+                            let accessConfigArgs: [String: Any] = [
+                                "doSelect": true,
+                                "power": Int16(30)
+                            ]
+                            
+                            let result = viewModel.startInventory(reader: reader, memoryBank: memoryBank, reportConfigArgs: reportConfigArgs, accessConfigArgs: accessConfigArgs)
+                            print(result)
+                        }) {
+                            Text("Start Reading")
+                                .padding()
+                                .background(Color.green)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                        
+                        Button(action: {
+                            let reader = "readerID"
+                            let result = viewModel.stopInventory(reader: reader)
+                            print(result)
+                        }) {
+                            Text("Stop Reading")
+                                .padding()
+                                .background(Color.red)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                    }
+                    .padding()
+                }
             }
-        })
-        .padding()
-    }
+        }
 }
 
 #Preview {
