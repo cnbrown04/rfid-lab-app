@@ -23,6 +23,7 @@ enum MemoryBank: UInt32 {
 class RFIDViewModel: ObservableObject {
     @Published var readers: [String] = []
     @Published var readerID: Int32 = 0
+    @Published var tags: [String] = []
     let _api: srfidISdkApi = srfidSdkFactory.createRfidSdkApiInstance()
     let apiDelegate: SdkApiDelegate
     
@@ -85,13 +86,37 @@ class RFIDViewModel: ObservableObject {
         let accessConfig = srfidAccessConfig()
         configureAccessConfig(accessConfig, with: accessConfigArgs)
 
-        let bank = SRFID_MEMORYBANK(memoryBank)
+        let bank = SRFID_MEMORYBANK(memoryBank.rawValue)
         let __statusMessage = NSString()
         var _statusMessage = __statusMessage
 
         statusMessage = withUnsafeMutablePointer(to: &_statusMessage) { ptr -> NSString in
             let autoreleasePtr = AutoreleasingUnsafeMutablePointer<NSString?>(ptr)
             resp = _api.srfidStartInventory(readerId, aMemoryBank: bank, aReportConfig: reportConfig, aAccessConfig: accessConfig, aStatusMessage: autoreleasePtr)
+            return __statusMessage
+        }
+
+        if resp == SRFID_RESULT_SUCCESS {
+            return ["status": "success", "message": statusMessage]
+        } else {
+            return ["status": "failure", "message": statusMessage]
+        }
+    }
+    
+    func stopInventory(reader: String) -> [String: Any] {
+        var resp = SRFID_RESULT_FAILURE
+        var statusMessage: NSString = ""
+
+        guard let readerId = Int32(reader) else {
+            return ["status": "failure", "message": "Invalid reader ID"]
+        }
+
+        let __statusMessage = NSString()
+        var _statusMessage = __statusMessage
+
+        statusMessage = withUnsafeMutablePointer(to: &_statusMessage) { ptr -> NSString in
+            let autoreleasePtr = AutoreleasingUnsafeMutablePointer<NSString?>(ptr)
+            resp = _api.srfidStopInventory(readerId, aStatusMessage: autoreleasePtr)
             return __statusMessage
         }
 
