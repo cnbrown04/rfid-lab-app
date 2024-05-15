@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+   
     var body: some View {
         NavigationView {
             ZStack {
-                Color(UIColor.secondarySystemBackground)
+                Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea()
                 VStack {
+                    Image("Logo")
                     HStack {
                         NavigationLink(destination: AuditView(), label: {
                             VStack {
@@ -28,7 +30,7 @@ struct ContentView: View {
                             .background(.blue)
                             .cornerRadius(8)
                         })
-                        NavigationLink(destination: RFIDReaderListView(), label: {
+                        NavigationLink(destination: TestingView(), label: {
                             VStack {
                                 Label("Testing", systemImage: "testtube.2")
                                 Button(action: {}) {
