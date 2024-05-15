@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var scannerIndex = 0
+    @State var label = "Connect"
     @ObservedObject var viewModel = RFIDViewModel()
     
     var body: some View {
@@ -20,12 +21,22 @@ struct SettingsView: View {
                         Image(systemName: "qrcode.viewfinder")
                         Picker(selection: $scannerIndex, label: Text("Scanner")) {
                             let readers = viewModel.getAvailableReaderList()
-    
-                            ForEach(readers) { reader in
-                                Text(reader.name)
+                            Text("Pick a Scanner").tag(0)
+                            ForEach(0..<readers.count, id: \.self) { index in
+                                Text("\(readers[index].name) ").tag(index+1)
                             }
                         }
+                        .pickerStyle(.menu)
                     }
+                    Button(label) {
+                        let result = viewModel.connectToReader(reader: scannerIndex)
+                        if (result) {
+                            label = "Connected"
+                        } else {
+                            label = "Failed!"
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center).padding()
                 })
             }
         }
