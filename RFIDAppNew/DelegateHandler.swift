@@ -8,6 +8,15 @@
 import Foundation
 
 class SdkApiDelegate: NSObject, srfidISdkApiDelegate {
+    let api: srfidISdkApi
+    var availableReaders: Array<srfidReaderInfo>?
+    var activeReaders: Array<srfidReaderInfo>?
+    let isActiveReader = false
+    
+    init(api: srfidISdkApi) {
+        self.api = api
+    }
+    
     func srfidEventReaderAppeared(_ availableReader: srfidReaderInfo!) {
         
     }
@@ -17,11 +26,23 @@ class SdkApiDelegate: NSObject, srfidISdkApiDelegate {
     }
     
     func srfidEventCommunicationSessionEstablished(_ activeReader: srfidReaderInfo!) {
-        
+        if let reader = self.availableReaders?.first(where: { $0.getReaderID() == activeReader.getReaderID()}) {
+            reader.setActive(true)
+            let isActiveReader = true
+        }
+        let resp = self.api.srfidEstablishAsciiConnection(activeReader.getReaderID(), aPassword: nil)
+        if resp == SRFID_RESULT_SUCCESS {
+            self.api.srfidSetBeeperConfig(activeReader.getReaderID(), aBeeperConfig: SRFID_BEEPERCONFIG_QUIET, aStatusMessage: nil)
+        }
     }
     
     func srfidEventCommunicationSessionTerminated(_ readerID: Int32) {
         
+        let isActiveReader = false
+    }
+    
+    func srfidIsActiveReader() -> Bool {
+        return isActiveReader
     }
     
     func srfidEventReadNotify(_ readerID: Int32, aTagData tagData: srfidTagData!) {
@@ -52,11 +73,4 @@ class SdkApiDelegate: NSObject, srfidISdkApiDelegate {
         
     }
     
-    let api: srfidISdkApi
-    var availableReaders: Array<srfidReaderInfo>?
-    var activeReaders: Array<srfidReaderInfo>?
-    
-    init(api: srfidISdkApi) {
-        self.api = api
-    }
 }
