@@ -12,18 +12,15 @@
 		E04F83CA2BED8286007AF835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04F83C92BED8286007AF835 /* Assets.xcassets */; };
 		E04F83CE2BED8286007AF835 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04F83CD2BED8286007AF835 /* Preview Assets.xcassets */; };
 		E04F84072BED82FF007AF835 /* libintegratedsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84032BED82FF007AF835 /* libintegratedsdk.a */; };
-		E04F84082BED82FF007AF835 /* libsymbolbt-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84042BED82FF007AF835 /* libsymbolbt-sdk.a */; };
-		E04F84092BED82FF007AF835 /* libsymbolrfid-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84052BED82FF007AF835 /* libsymbolrfid-sdk.a */; };
 		E04F840D2BED836A007AF835 /* AuditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F840B2BED836A007AF835 /* AuditView.swift */; };
 		E04F840E2BED836A007AF835 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F840C2BED836A007AF835 /* SettingsView.swift */; };
 		E04F84102BED8373007AF835 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F840F2BED8373007AF835 /* TestingView.swift */; };
 		E04F84132BED83B1007AF835 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84122BED83B1007AF835 /* CoreBluetooth.framework */; };
 		E04F84152BED83BA007AF835 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04F84142BED83BA007AF835 /* ExternalAccessory.framework */; };
 		E04F84182BED88C6007AF835 /* NewApp.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04F84172BED88C6007AF835 /* NewApp.plist */; };
-		E04F841E2BEEC61D007AF835 /* AccessoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */; };
 		E04F84202BEED991007AF835 /* RFIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F841F2BEED991007AF835 /* RFIDManager.swift */; };
-		E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */; };
 		E04F842F2BF2B0FB007AF835 /* DelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F842E2BF2B0FB007AF835 /* DelegateHandler.swift */; };
+		E04F84312BF42BFB007AF835 /* serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F84302BF42BFB007AF835 /* serializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,10 +86,9 @@
 		E04F84142BED83BA007AF835 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
 		E04F84162BED83C3007AF835 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		E04F84172BED88C6007AF835 /* NewApp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = NewApp.plist; path = RFIDAppNew/NewApp.plist; sourceTree = SOURCE_ROOT; };
-		E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryManager.swift; sourceTree = "<group>"; };
 		E04F841F2BEED991007AF835 /* RFIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDManager.swift; sourceTree = "<group>"; };
-		E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDReaderListView.swift; sourceTree = "<group>"; };
 		E04F842E2BF2B0FB007AF835 /* DelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateHandler.swift; sourceTree = "<group>"; };
+		E04F84302BF42BFB007AF835 /* serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04F84092BED82FF007AF835 /* libsymbolrfid-sdk.a in Frameworks */,
 				E04F84152BED83BA007AF835 /* ExternalAccessory.framework in Frameworks */,
-				E04F84082BED82FF007AF835 /* libsymbolbt-sdk.a in Frameworks */,
 				E04F84132BED83B1007AF835 /* CoreBluetooth.framework in Frameworks */,
 				E04F84072BED82FF007AF835 /* libintegratedsdk.a in Frameworks */,
 			);
@@ -140,9 +134,9 @@
 				E04F83CB2BED8286007AF835 /* RFIDAppNew.entitlements */,
 				E04F83CC2BED8286007AF835 /* Preview Content */,
 				E04F84172BED88C6007AF835 /* NewApp.plist */,
-				E04F841D2BEEC61D007AF835 /* AccessoryManager.swift */,
 				E04F841F2BEED991007AF835 /* RFIDManager.swift */,
 				E04F842E2BF2B0FB007AF835 /* DelegateHandler.swift */,
+				E04F84302BF42BFB007AF835 /* serializer.swift */,
 			);
 			path = RFIDAppNew;
 			sourceTree = "<group>";
@@ -224,7 +218,6 @@
 				E04F840F2BED8373007AF835 /* TestingView.swift */,
 				E04F840B2BED836A007AF835 /* AuditView.swift */,
 				E04F840C2BED836A007AF835 /* SettingsView.swift */,
-				E04F84212BEEDC54007AF835 /* RFIDReaderListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,14 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04F84222BEEDC54007AF835 /* RFIDReaderListView.swift in Sources */,
 				E04F840D2BED836A007AF835 /* AuditView.swift in Sources */,
 				E04F842F2BF2B0FB007AF835 /* DelegateHandler.swift in Sources */,
 				E04F84102BED8373007AF835 /* TestingView.swift in Sources */,
 				E04F840E2BED836A007AF835 /* SettingsView.swift in Sources */,
 				E04F83C82BED8285007AF835 /* ContentView.swift in Sources */,
+				E04F84312BF42BFB007AF835 /* serializer.swift in Sources */,
 				E04F84202BEED991007AF835 /* RFIDManager.swift in Sources */,
-				E04F841E2BEEC61D007AF835 /* AccessoryManager.swift in Sources */,
 				E04F83C62BED8285007AF835 /* RFIDAppNewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -364,6 +357,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -382,6 +376,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -392,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -426,6 +422,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -438,6 +435,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = header.h;
 			};
