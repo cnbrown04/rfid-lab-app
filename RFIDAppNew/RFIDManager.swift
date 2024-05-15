@@ -8,12 +8,13 @@
 import SwiftUI
 import Combine
 
-struct ReaderStruct: Identifiable {
+struct ReaderStruct: Identifiable, Hashable {
     let name: String
     let id: Int32
 }
 
 class RFIDViewModel: ObservableObject {
+    @Published var isActiveReader: Bool = false
     @Published var readers: [String] = []
     let _api: srfidISdkApi = srfidSdkFactory.createRfidSdkApiInstance()
     let apiDelegate: SdkApiDelegate
@@ -51,6 +52,21 @@ class RFIDViewModel: ObservableObject {
         return apiDelegate.availableReaders!.map({ (reader: srfidReaderInfo) -> ReaderStruct in
             return ReaderStruct(name: reader.getReaderName(), id: reader.getReaderID())
         })
+    }
+    
+    func connectToReader(reader: Int) -> Bool {
+        let response = _api.srfidEstablishCommunicationSession(Int32(reader))
+        if (response == SRFID_RESULT_SUCCESS) {
+            isActiveReader = true
+            return true
+        } else {
+            isActiveReader = false
+            return false
+        }
+    }
+    
+    func startInventory() {
+        _api.srfidStartInventory(<#T##readerID: Int32##Int32#>, aMemoryBank: <#T##SRFID_MEMORYBANK#>, aReportConfig: <#T##srfidReportConfig!#>, aAccessConfig: <#T##srfidAccessConfig!#>, aStatusMessage: <#T##AutoreleasingUnsafeMutablePointer<NSString?>!#>)
     }
 }
 
