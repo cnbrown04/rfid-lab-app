@@ -15,7 +15,6 @@ struct ContentView: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea()
                 VStack {
-                    Image("Logo")
                     HStack {
                         NavigationLink(destination: AuditView(), label: {
                             VStack {
@@ -59,8 +58,6 @@ struct ContentView: View {
                             .cornerRadius(8)
                         })
                     }
-                    Spacer()
-                        .frame(height: 450)
                 }
             }
         }
