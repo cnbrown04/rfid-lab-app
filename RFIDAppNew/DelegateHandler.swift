@@ -7,11 +7,12 @@
 
 import Foundation
 
-class SdkApiDelegate: NSObject, srfidISdkApiDelegate {
+class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
     let api: srfidISdkApi
     var availableReaders: Array<srfidReaderInfo>?
     var activeReaders: Array<srfidReaderInfo>?
     let isActiveReader = false
+    @Published var tags: [String] = []
     
     init(api: srfidISdkApi) {
         self.api = api
@@ -46,7 +47,14 @@ class SdkApiDelegate: NSObject, srfidISdkApiDelegate {
     }
     
     func srfidEventReadNotify(_ readerID: Int32, aTagData tagData: srfidTagData!) {
-        
+        // This method is called when a tag is read
+        if let tagId = tagData.getTagId() {
+            DispatchQueue.main.async {
+                self.tags.append(tagId)
+                print("Tag appended: \(tagId)")
+            }
+        }
+        print(tags)
     }
     
     func srfidEventStatusNotify(_ readerID: Int32, aEvent event: SRFID_EVENT_STATUS, aNotification notificationData: Any!) {

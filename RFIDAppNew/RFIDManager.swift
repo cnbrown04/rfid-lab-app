@@ -25,7 +25,7 @@ class RFIDViewModel: ObservableObject {
     @Published var readerID: Int32 = 0
     @Published var tags: [String] = []
     let _api: srfidISdkApi = srfidSdkFactory.createRfidSdkApiInstance()
-    let apiDelegate: SdkApiDelegate
+    @ObservedObject var apiDelegate: SdkApiDelegate
     
     init() {
         self.apiDelegate = SdkApiDelegate(api: _api)
@@ -38,6 +38,13 @@ class RFIDViewModel: ObservableObject {
         _api.srfidEnableAvailableReadersDetection(true)
         _api.srfidEnableAutomaticSessionReestablishment(true)
         _api.srfidSetDelegate(self.apiDelegate)
+        observeTags()
+    }
+    
+    private func observeTags() {
+        apiDelegate.$tags
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$tags)
     }
 
     func getAvailableReaderList() -> [ReaderStruct] {
