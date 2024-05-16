@@ -12,27 +12,54 @@ struct ContentView: View {
    
     var body: some View {
         TabView(selection: $defaultSel) {
-            AuditView()
-                .tabItem {
-                    Label("Audit", systemImage: "list.bullet.clipboard.fill")
-                }
-                .tag(1)
-            InventoryView()
-                .tabItem {
-                    Label("Inventory", systemImage: "tray.2.fill")
-                }.tag(2)
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }.tag(3)
-            TestingView()
-                .tabItem {
-                    Label("Testing", systemImage: "testtube.2")
-                }.tag(4)
-            SettingsView(versionString: AppVersionProvider.appVersion(), appIcon: AppIconProvider.appIcon())
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape.fill")
-                }.tag(5)
+            // Audit View Stack
+            NavigationStack {
+                AuditView()
+                    .navigationBarTitle("Audit")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label("Audit", systemImage: "list.bullet.clipboard.fill")
+            }.tag(1)
+            
+            // Inventory Stack
+            NavigationStack {
+                InventoryView()
+                    .navigationBarTitle("Inventory")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label("Inventory", systemImage: "tray.2.fill")
+            }.tag(2)
+            
+            // Home Page Stack
+            NavigationStack {
+                HomeView()
+                    .navigationBarTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label("Home", systemImage: "house.fill")
+            }.tag(3)
+            
+            // Testing View Stack
+            NavigationStack {
+                TestingView()
+                    .navigationBarTitle("Testing")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label("Testing", systemImage: "testtube.2")
+            }.tag(4)
+            
+            // Settings Stack
+            NavigationStack {
+                SettingsView(versionString: AppVersionProvider.appVersion(), appIcon: AppIconProvider.appIcon())
+                    .navigationBarTitle("Settings")
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gearshape.fill")
+            }.tag(5)
         }
     }
 }
