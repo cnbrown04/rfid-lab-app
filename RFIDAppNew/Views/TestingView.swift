@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TestingView: View {
     @StateObject var viewModel = RFIDViewModel()
+    @State var scanFor: MemoryBank = .epc
     
     var body: some View {
         NavigationView {
@@ -17,8 +18,14 @@ struct TestingView: View {
                 List(viewModel.apiDelegate.tags, id: \.self) { tag in
                     Text(tag)
                 }
-                .navigationTitle("RFID Tags")
                 
+                HStack {
+                    Picker("Scan for:", selection: $scanFor) {
+                        ForEach(MemoryBank.allCases) { option in
+                            Text(String(describing: option))
+                        }
+                    }.pickerStyle(.segmented)
+                }.padding()
                 HStack {
                     Button(action: {
                         let reader = "1"
@@ -62,9 +69,10 @@ struct TestingView: View {
                 .padding()
             }
         }
+        .navigationBarTitle("Inventory")
     }
 }
 
-#Preview {
-    AnyView(TestingView())
-}
+//#Preview {
+//    AnyView(TestingView())
+//}

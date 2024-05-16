@@ -10,31 +10,25 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var scannerIndex = 0
-    @State var label = "Connect"
     @ObservedObject var viewModel = RFIDViewModel()
     
     var body: some View {
+        let readers = viewModel.getAvailableReaderList()
         NavigationView {
             Form {
                 Section(header: Text("SCANNER OPTIONS"), content: {
                     HStack {
                         Image(systemName: "qrcode.viewfinder")
                         Picker(selection: $scannerIndex, label: Text("Scanner")) {
-                            let readers = viewModel.getAvailableReaderList()
-                            Text("Pick a Scanner").tag(0)
-                            ForEach(0..<readers.count, id: \.self) { index in
-                                Text("\(readers[index].name) ").tag(index+1)
+                            Text("Pick a scanner").tag(0)
+                            ForEach(readers) { reader in
+                                Text(reader.name).tag(Int(reader.id))
                             }
                         }
                         .pickerStyle(.menu)
                     }
-                    Button(label) {
+                    Button("Connect") {
                         let result = viewModel.connectToReader(reader: scannerIndex)
-                        if (result) {
-                            label = "Connected"
-                        } else {
-                            label = "Failed!"
-                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .center).padding()
                 })

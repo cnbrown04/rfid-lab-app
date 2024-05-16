@@ -11,7 +11,7 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
     let api: srfidISdkApi
     var availableReaders: Array<srfidReaderInfo>?
     var activeReaders: Array<srfidReaderInfo>?
-    let isActiveReader = false
+    var isActiveReader = false
     @Published var tags: [String] = []
     
     init(api: srfidISdkApi) {
@@ -29,7 +29,7 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
     func srfidEventCommunicationSessionEstablished(_ activeReader: srfidReaderInfo!) {
         if let reader = self.availableReaders?.first(where: { $0.getReaderID() == activeReader.getReaderID()}) {
             reader.setActive(true)
-            let isActiveReader = true
+            isActiveReader = true
         }
         let resp = self.api.srfidEstablishAsciiConnection(activeReader.getReaderID(), aPassword: nil)
         if resp == SRFID_RESULT_SUCCESS {
@@ -38,8 +38,7 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
     }
     
     func srfidEventCommunicationSessionTerminated(_ readerID: Int32) {
-        
-        let isActiveReader = false
+        isActiveReader = false
     }
     
     func srfidIsActiveReader() -> Bool {
@@ -51,7 +50,6 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
         if let tagId = tagData.getTagId() {
             DispatchQueue.main.async {
                 self.tags.append(tagId)
-                print("Tag appended: \(tagId)")
             }
         }
         print(tags)
