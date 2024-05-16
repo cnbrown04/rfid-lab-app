@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E04DCD682BF67FBF00ACE4C8 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DCD672BF67FBF00ACE4C8 /* InventoryView.swift */; };
+		E04DCD6A2BF68F4300ACE4C8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DCD692BF68F4300ACE4C8 /* HomeView.swift */; };
+		E04DCD6C2BF6951A00ACE4C8 /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DCD6B2BF6951A00ACE4C8 /* AppIconProvider.swift */; };
+		E04DCD6F2BF6955000ACE4C8 /* AppVersionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DCD6E2BF6955000ACE4C8 /* AppVersionProvider.swift */; };
 		E04F83C62BED8285007AF835 /* RFIDAppNewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F83C52BED8285007AF835 /* RFIDAppNewApp.swift */; };
 		E04F83C82BED8285007AF835 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F83C72BED8285007AF835 /* ContentView.swift */; };
 		E04F83CA2BED8286007AF835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04F83C92BED8286007AF835 /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E04DCD672BF67FBF00ACE4C8 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		E04DCD692BF68F4300ACE4C8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E04DCD6B2BF6951A00ACE4C8 /* AppIconProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
+		E04DCD6E2BF6955000ACE4C8 /* AppVersionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionProvider.swift; sourceTree = "<group>"; };
 		E04F83C22BED8285007AF835 /* RFIDAppNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFIDAppNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04F83C52BED8285007AF835 /* RFIDAppNewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDAppNewApp.swift; sourceTree = "<group>"; };
 		E04F83C72BED8285007AF835 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E04DCD6D2BF6953F00ACE4C8 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				E04DCD6B2BF6951A00ACE4C8 /* AppIconProvider.swift */,
+				E04DCD6E2BF6955000ACE4C8 /* AppVersionProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		E04F83B92BED8285007AF835 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +144,7 @@
 		E04F83C42BED8285007AF835 /* RFIDAppNew */ = {
 			isa = PBXGroup;
 			children = (
+				E04DCD6D2BF6953F00ACE4C8 /* Providers */,
 				E04F840A2BED8343007AF835 /* Views */,
 				E04F83C52BED8285007AF835 /* RFIDAppNewApp.swift */,
 				E04F83C72BED8285007AF835 /* ContentView.swift */,
@@ -218,6 +236,8 @@
 				E04F840F2BED8373007AF835 /* TestingView.swift */,
 				E04F840B2BED836A007AF835 /* AuditView.swift */,
 				E04F840C2BED836A007AF835 /* SettingsView.swift */,
+				E04DCD672BF67FBF00ACE4C8 /* InventoryView.swift */,
+				E04DCD692BF68F4300ACE4C8 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,8 +325,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04F840D2BED836A007AF835 /* AuditView.swift in Sources */,
+				E04DCD6F2BF6955000ACE4C8 /* AppVersionProvider.swift in Sources */,
 				E04F842F2BF2B0FB007AF835 /* DelegateHandler.swift in Sources */,
+				E04DCD6C2BF6951A00ACE4C8 /* AppIconProvider.swift in Sources */,
 				E04F84102BED8373007AF835 /* TestingView.swift in Sources */,
+				E04DCD6A2BF68F4300ACE4C8 /* HomeView.swift in Sources */,
+				E04DCD682BF67FBF00ACE4C8 /* InventoryView.swift in Sources */,
 				E04F840E2BED836A007AF835 /* SettingsView.swift in Sources */,
 				E04F83C82BED8285007AF835 /* ContentView.swift in Sources */,
 				E04F84312BF42BFB007AF835 /* serializer.swift in Sources */,

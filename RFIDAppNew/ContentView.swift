@@ -8,61 +8,58 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var defaultSel = 3
    
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color(UIColor.systemGroupedBackground)
-                    .ignoresSafeArea()
-                VStack {
-                    Image("Logo")
-                    HStack {
-                        NavigationLink(destination: AuditView(), label: {
-                            VStack {
-                                Label("Audit", systemImage: "list.clipboard.fill")
-                                Button(action: {}) {
-                                    
-                                }
-                                .frame(width: 100)
-                            }
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(.blue)
-                            .cornerRadius(8)
-                        })
-                        NavigationLink(destination: TestingView(), label: {
-                            VStack {
-                                Label("Testing", systemImage: "testtube.2")
-                                Button(action: {}) {
-                                    
-                                }
-                                .frame(width: 100)
-                            }
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(.orange)
-                            .cornerRadius(8)
-                        })
-                    }
-                    HStack {
-                        NavigationLink(destination: SettingsView(), label: {
-                            VStack {
-                                Label("Settings", systemImage: "gearshape.fill")
-                                Button(action: {}) {
-                                    
-                                }
-                                .frame(width: 240)
-                            }
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(.gray)
-                            .cornerRadius(8)
-                        })
-                    }
-                    Spacer()
-                        .frame(height: 450)
-                }
+        TabView(selection: $defaultSel) {
+            // Audit View Stack
+            NavigationStack {
+                AuditView()
+                    .navigationBarTitle("Audit")
+                    .navigationBarTitleDisplayMode(.inline)
             }
+            .tabItem {
+                Label("Audit", systemImage: "list.bullet.clipboard.fill")
+            }.tag(1)
+            
+            // Inventory Stack
+            NavigationStack {
+                InventoryView()
+                    .navigationBarTitle("Inventory")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label("Inventory", systemImage: "tray.2.fill")
+            }.tag(2)
+            
+            // Home Page Stack
+            NavigationStack {
+                HomeView()
+                    .navigationBarTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label("Home", systemImage: "house.fill")
+            }.tag(3)
+            
+            // Testing View Stack
+            NavigationStack {
+                TestingView()
+                    .navigationBarTitle("Testing")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label("Testing", systemImage: "testtube.2")
+            }.tag(4)
+            
+            // Settings Stack
+            NavigationStack {
+                SettingsView(versionString: AppVersionProvider.appVersion(), appIcon: AppIconProvider.appIcon())
+                    .navigationBarTitle("Settings")
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gearshape.fill")
+            }.tag(5)
         }
     }
 }

@@ -13,11 +13,26 @@ struct ReaderStruct: Identifiable, Hashable {
     let id: Int32
 }
 
-enum MemoryBank: UInt32 {
+enum MemoryBank: UInt32, CaseIterable, Identifiable {
     case reserved = 0
     case epc = 1
     case tid = 2
     case user = 3
+    
+    var id: Self { self }
+    
+    var description: String {
+        switch self {
+        case .reserved:
+            return "RESERVED - 0"
+        case .epc:
+            return "EPC - 1"
+        case .tid:
+            return "TID - 2"
+        case .user:
+            return "USER - 3"
+        }
+    }
 }
 
 class RFIDViewModel: ObservableObject {
@@ -77,6 +92,10 @@ class RFIDViewModel: ObservableObject {
         } else {
             return false
         }
+    }
+    
+    func isActiveReader() -> Bool {
+        return apiDelegate.isActiveReader
     }
     
     func startInventory(reader: String, memoryBank: MemoryBank, reportConfigArgs: [String: Bool], accessConfigArgs: [String: Any]) -> [String: Any] {
