@@ -14,7 +14,7 @@ struct TestingView: View {
     
     var body: some View {
         NavigationView {
-        }.navigationTitle("Testing")
+        }
     }
 }
 

@@ -6,38 +6,72 @@
 //
 
 import Foundation
+import UniformTypeIdentifiers
 import SwiftUI
 
 struct AuditView: View {
     @State private var storeArea: String = ""
-    @State public var readUPC: Float = 0
-    @ObservedObject var viewModel = RFIDViewModel()
-    let memoryBank = MemoryBank.epc
-    let reportConfigArgs: [String: Bool] = [
-        "includeFirstSeenTime": true,
-        "includePhase": true,
-        "includePC": true,
-        "includeRSSI": true,
-        "includeChannelIndex": true,
-        "includeLastSeenTime": true,
-        "includeTagSeenCount": true
-    ]
-    let accessConfigArgs: [String: Any] = [
-        "doSelect": true,
-        "power": Int16(30)
-    ]
+    @State private var selectedTag: String = "Poop"
+    let tags = ["Poop", "poop2", "poop3"]
     
     var body: some View {
-        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-            Text("Store Area")
-            TextField("Click here", text: $storeArea)
-                .textFieldStyle(.roundedBorder)
-            
-            Button("Read Tag") {
-                
+        List {
+            Section(header: Text("Store Area")) {
+                TextField("Enter store area here", text: $storeArea)
+                    .lineLimit(1)
             }
-        })
-        .padding()
+            
+            Section(header: Text("Scan Results")) {
+                VStack {
+                    Text("UPC")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fontWeight(.semibold)
+                    Text("123456789")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(Color(UIColor.gray))
+                }
+                VStack {
+                    Text("EPC")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fontWeight(.semibold)
+                    Text("123456789")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(Color(UIColor.gray))
+                }
+                VStack {
+                    Text("TID")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fontWeight(.semibold)
+                    Text("123456789")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(Color(UIColor.gray))
+                }
+                VStack {
+                    Text("EXTRACTED UPC")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fontWeight(.semibold)
+                    Text("123456789")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(Color(UIColor.gray))
+                }
+            }
+            
+            Section(header: Text("Tag Type")) {
+                Picker("Tag Type", selection: $selectedTag) {
+                    ForEach(tags, id: \.self) { i in
+                        HStack {
+                            Text(i)
+                        }.tag(i)
+                    }
+                }.pickerStyle(.navigationLink)
+            }
+            
+            Button("Save") {
+                let _ = print("poopy")
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+        }
+        Divider().padding([.bottom, .horizontal])
     }
 }
 
