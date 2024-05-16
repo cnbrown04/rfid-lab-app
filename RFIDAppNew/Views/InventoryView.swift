@@ -17,13 +17,21 @@ struct InventoryView: View {
             List(viewModel.apiDelegate.tags, id: \.self) { tag in
                 Text(tag)
             }
+            .overlay(Group {
+                if (viewModel.apiDelegate.tags.isEmpty) {
+                    Text("Start scanning to get started.")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                }
+            })
             
             HStack {
                 Picker("Scan for:", selection: $scanFor) {
                     ForEach(MemoryBank.allCases) { option in
                         Text(String(describing: option))
                     }
-                }.pickerStyle(.segmented)
+                }
+                .pickerStyle(.segmented)
             }.padding(.horizontal)
             HStack {
                 Button(action: {
