@@ -27,10 +27,17 @@ struct SettingsView: View {
                         }
                         .pickerStyle(.menu)
                     }
-                    Button("Connect") {
-                        let result = viewModel.connectToReader(reader: scannerIndex)
+                    if viewModel.isActiveReader() {
+                        Button("Connected") {
+                            // Handle connected action
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center).padding()
+                    } else {
+                        Button("Connect") {
+                            let result = viewModel.connectToReader(reader: scannerIndex)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center).padding()
                     }
-                    .frame(maxWidth: .infinity, alignment: .center).padding()
                 })
             }
         }
