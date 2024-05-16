@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TestingView: View {
-    @ObservedObject var viewModel = RFIDViewModel()
+    @StateObject var viewModel = RFIDViewModel()
     
     var body: some View {
         NavigationView {
@@ -38,7 +38,6 @@ struct TestingView: View {
                         ]
                         
                         let result = viewModel.startInventory(reader: reader, memoryBank: memoryBank, reportConfigArgs: reportConfigArgs, accessConfigArgs: accessConfigArgs)
-                        print(result)
                     }) {
                         Text("Start Reading")
                             .padding()

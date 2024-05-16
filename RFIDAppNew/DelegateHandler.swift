@@ -51,6 +51,7 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
         if let tagId = tagData.getTagId() {
             DispatchQueue.main.async {
                 self.tags.append(tagId)
+                print("Tag appended: \(tagId)")
             }
         }
         print(tags)
