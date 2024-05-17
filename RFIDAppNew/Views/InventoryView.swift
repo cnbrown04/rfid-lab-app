@@ -66,7 +66,7 @@ struct InventoryView: View {
                     .background(buttonColor)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-                    .disabled(!viewModel.apiDelegate.isActiveReader)
+                    //.disabled(!viewModel.apiDelegate.isActiveReader)
                 } else {
                     Button("Stop Scanning") {
                         scanning = false

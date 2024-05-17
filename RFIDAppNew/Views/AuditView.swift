@@ -13,7 +13,7 @@ struct AuditView: View {
     @StateObject var viewModel = RFIDViewModel()
     @State private var storeArea: String = ""
     @State private var selectedTag: String = "Poop"
-    let tags = ["Poop", "poop2", "poop3"]
+    let tagTypes = ["Poop", "poop2", "poop3"]
     
     var body: some View {
         List {
@@ -66,7 +66,7 @@ struct AuditView: View {
             
             Section(header: Text("Tag Type")) {
                 Picker("Tag Type", selection: $selectedTag) {
-                    ForEach(tags, id: \.self) { i in
+                    ForEach(tagTypes, id: \.self) { i in
                         HStack {
                             Text(i)
                         }.tag(i)

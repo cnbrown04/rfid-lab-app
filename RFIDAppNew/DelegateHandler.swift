@@ -52,7 +52,6 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
                 self.tags.append(tagId)
             }
         }
-        print(tags)
     }
     
     func srfidEventStatusNotify(_ readerID: Int32, aEvent event: SRFID_EVENT_STATUS, aNotification notificationData: Any!) {
