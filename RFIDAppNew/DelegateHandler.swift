@@ -32,7 +32,7 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
         }
         let resp = self.api.srfidEstablishAsciiConnection(activeReader.getReaderID(), aPassword: nil)
         if resp == SRFID_RESULT_SUCCESS {
-            self.api.srfidSetBeeperConfig(activeReader.getReaderID(), aBeeperConfig: SRFID_BEEPERCONFIG_QUIET, aStatusMessage: nil)
+            self.api.srfidSetBeeperConfig(activeReader.getReaderID(), aBeeperConfig: SRFID_BEEPERCONFIG_HIGH, aStatusMessage: nil)
         }
         isActiveReader = true
     }
@@ -68,7 +68,7 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
     }
     
     func srfidEventTriggerNotify(_ readerID: Int32, aTriggerEvent triggerEvent: SRFID_TRIGGEREVENT) {
-        
+        print(triggerEvent)
     }
     
     func srfidEventBatteryNotity(_ readerID: Int32, aBatteryEvent batteryEvent: srfidBatteryEvent!) {

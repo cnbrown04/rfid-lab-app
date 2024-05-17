@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var scannerIndex = 0
+    @State private var beeperIndex = 0
     @State var label = "Connect"
     @ObservedObject var viewModel = RFIDViewModel()
     @State private var connectAlert = false
@@ -21,7 +22,7 @@ struct SettingsView: View {
     var body: some View {
         let readers = viewModel.getAvailableReaderList()
         Form {
-            Section(header: Text("SCANNER OPTIONS"), content: {
+            Section(header: Text("SCANNER CONNECTION"), content: {
                 HStack {
                     Image(systemName: "qrcode.viewfinder")
                     Picker(selection: $scannerIndex, label: Text("Scanner")) {
@@ -62,6 +63,17 @@ struct SettingsView: View {
                     }
                 }
             })
+            
+            if (label == "Connected") {
+                Section(header: Text("SCANNER OPTIONS"), content: {
+                    Picker(selection: $beeperIndex, label: Text("Beeper Volume")) {
+                        Text("Loud").tag(0)
+                        Text("Medium").tag(1)
+                        Text("Quiet").tag(2)
+                    }
+                })
+            }
+            
             Section(header: Text("APP INFO"), content: {
                 VStack {
                     HStack(alignment: .center, spacing: 12) {

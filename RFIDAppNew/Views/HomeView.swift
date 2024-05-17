@@ -15,11 +15,12 @@ struct HomeView: View {
             Text("Welcome!")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            Text("To get started, click Inventory on the bottom navigation bar.")
+            Text("To get started, click Settings on the bottom navigation bar to connect to a reader.")
                 .font(.headline)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color.gray)
+                .padding(.horizontal)
             Spacer()
         }
         .toolbar {

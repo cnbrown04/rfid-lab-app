@@ -13,6 +13,10 @@ struct InventoryView: View {
     @State var scanFor: MemoryBank = .epc
     @State var scanning = false
     
+    var buttonColor: Color {
+        return !viewModel.apiDelegate.isActiveReader ? .gray : .green
+    }
+    
     var body: some View {
         let sanitizedData = Array(Set(viewModel.apiDelegate.tags))
         VStack {
@@ -56,12 +60,13 @@ struct InventoryView: View {
                             "power": Int16(30)
                         ]
                         
-                        let result = viewModel.startInventory(reader: reader, memoryBank: memoryBank, reportConfigArgs: reportConfigArgs, accessConfigArgs: accessConfigArgs)
+                        let _ = viewModel.startInventory(reader: reader, memoryBank: memoryBank, reportConfigArgs: reportConfigArgs, accessConfigArgs: accessConfigArgs)
                     }
                     .padding()
-                    .background(Color.green)
+                    .background(buttonColor)
                     .foregroundColor(.white)
                     .cornerRadius(10)
+                    .disabled(!viewModel.apiDelegate.isActiveReader)
                 } else {
                     Button("Stop Scanning") {
                         scanning = false
