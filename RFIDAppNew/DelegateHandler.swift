@@ -79,4 +79,8 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
         
     }
     
+    func clearTags() {
+        tags = []
+    }
+    
 }
