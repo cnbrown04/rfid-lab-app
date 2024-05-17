@@ -14,8 +14,8 @@ struct InventoryView: View {
     @State var scanning = false
     
     var body: some View {
+        let sanitizedData = Array(Set(viewModel.apiDelegate.tags))
         VStack {
-            let sanitizedData = Array(Set(viewModel.apiDelegate.tags))
             List(sanitizedData, id: \.self) { tag in
                 Text(tag)
             }
@@ -77,6 +77,13 @@ struct InventoryView: View {
                 }
             }
             Divider().padding()
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button("Clear") {
+                        viewModel.apiDelegate.clearTags()
+                    }
+                }
+            }
         }
     }
 }
