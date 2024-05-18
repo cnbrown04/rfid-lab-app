@@ -12,7 +12,7 @@ struct SettingsView: View {
     @State private var scannerIndex = 0
     @State private var beeperIndex = 0
     @State var label = "Connect"
-    @ObservedObject var viewModel = RFIDViewModel()
+    @EnvironmentObject var viewModel: RFIDViewModel
     @State private var connectAlert = false
     @State private var failAlert = false
     @State private var alrConnectedAlert = false

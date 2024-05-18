@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 import SwiftUI
 
 struct AuditView: View {
-    @StateObject var viewModel = RFIDViewModel()
+    @EnvironmentObject var viewModel: RFIDViewModel
     @State private var storeArea: String = ""
     @State private var selectedTag: String = "Poop"
     let tagTypes = ["Poop", "poop2", "poop3"]

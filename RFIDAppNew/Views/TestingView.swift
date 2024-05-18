@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TestingView: View {
-    @StateObject var viewModel = RFIDViewModel()
+    @EnvironmentObject var viewModel: RFIDViewModel
     @State var scanFor: MemoryBank = .epc
     
     var body: some View {

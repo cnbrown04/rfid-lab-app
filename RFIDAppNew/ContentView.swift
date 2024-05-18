@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = RFIDViewModel()
     @State private var defaultSel = 3
    
     var body: some View {
@@ -17,6 +18,7 @@ struct ContentView: View {
                 AuditView()
                     .navigationBarTitle("Audit")
                     .navigationBarTitleDisplayMode(.inline)
+                    .environmentObject(viewModel)
             }
             .tabItem {
                 Label("Audit", systemImage: "list.bullet.clipboard.fill")
@@ -27,6 +29,7 @@ struct ContentView: View {
                 InventoryView()
                     .navigationBarTitle("Inventory")
                     .navigationBarTitleDisplayMode(.inline)
+                    .environmentObject(viewModel)
             }
             .tabItem {
                 Label("Inventory", systemImage: "tray.2.fill")
@@ -37,6 +40,7 @@ struct ContentView: View {
                 HomeView()
                     .navigationBarTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
+                    .environmentObject(viewModel)
             }
             .tabItem {
                 Label("Home", systemImage: "house.fill")
@@ -47,6 +51,7 @@ struct ContentView: View {
                 TestingView()
                     .navigationBarTitle("Testing")
                     .navigationBarTitleDisplayMode(.inline)
+                    .environmentObject(viewModel)
             }
             .tabItem {
                 Label("Testing", systemImage: "testtube.2")
@@ -56,6 +61,7 @@ struct ContentView: View {
             NavigationStack {
                 SettingsView(versionString: AppVersionProvider.appVersion(), appIcon: AppIconProvider.appIcon())
                     .navigationBarTitle("Settings")
+                    .environmentObject(viewModel)
             }
             .tabItem {
                 Label("Settings", systemImage: "gearshape.fill")
