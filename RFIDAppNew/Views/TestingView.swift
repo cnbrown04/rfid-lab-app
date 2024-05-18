@@ -10,11 +10,12 @@ import SwiftUI
 
 struct TestingView: View {
     @EnvironmentObject var viewModel: RFIDViewModel
-    @State var scanFor: MemoryBank = .epc
     
     var body: some View {
-        NavigationView {
-        }
+        Image(systemName: viewModel.apiDelegate.isTriggerPulled ? "checkmark.circle.fill" : "xmark.circle.fill")
+            .resizable()
+            .foregroundColor(viewModel.apiDelegate.isTriggerPulled ? .green : .red)
+            .frame(width: 50, height: 50)
     }
 }
 

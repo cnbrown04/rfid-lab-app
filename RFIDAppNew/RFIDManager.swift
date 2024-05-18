@@ -41,6 +41,7 @@ class RFIDViewModel: ObservableObject {
     @Published var tags: [String] = []
     let _api: srfidISdkApi = srfidSdkFactory.createRfidSdkApiInstance()
     @ObservedObject var apiDelegate: SdkApiDelegate
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         self.apiDelegate = SdkApiDelegate(api: _api)
@@ -54,12 +55,26 @@ class RFIDViewModel: ObservableObject {
         _api.srfidEnableAutomaticSessionReestablishment(true)
         _api.srfidSetDelegate(self.apiDelegate)
         observeTags()
+        observeTriggerEvents()
     }
     
     private func observeTags() {
         apiDelegate.$tags
             .receive(on: DispatchQueue.main)
             .assign(to: &$tags)
+    }
+    
+    private func observeTriggerEvents() {
+        apiDelegate.$isTriggerPulled
+            .sink { [weak self] isPulled in
+                self?.handleTriggerEvent(isPulled: isPulled)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func handleTriggerEvent(isPulled: Bool) {
+        print("Trigger event handled in ViewModel: \(isPulled ? "Pulled" : "Released")")
+        // Implement any additional logic needed on trigger event
     }
 
     func getAvailableReaderList() -> [ReaderStruct] {

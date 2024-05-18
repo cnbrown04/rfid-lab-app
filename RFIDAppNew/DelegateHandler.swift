@@ -7,12 +7,14 @@
 
 import Foundation
 
+
 class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
     let api: srfidISdkApi
     var availableReaders: Array<srfidReaderInfo>?
     var activeReaders: Array<srfidReaderInfo>?
     @Published var isActiveReader = false
     @Published var tags: [String] = []
+    @Published var isTriggerPulled: Bool = false
     
     init(api: srfidISdkApi) {
         self.api = api
@@ -67,7 +69,10 @@ class SdkApiDelegate: NSObject, ObservableObject, srfidISdkApiDelegate {
     }
     
     func srfidEventTriggerNotify(_ readerID: Int32, aTriggerEvent triggerEvent: SRFID_TRIGGEREVENT) {
-        print(triggerEvent)
+        DispatchQueue.main.async {
+            self.isTriggerPulled = (triggerEvent == SRFID_TRIGGEREVENT_PRESSED)
+            print("Trigger event notified for reader \(readerID) with event \(triggerEvent)") // Debug print statement
+        }
     }
     
     func srfidEventBatteryNotity(_ readerID: Int32, aBatteryEvent batteryEvent: srfidBatteryEvent!) {
